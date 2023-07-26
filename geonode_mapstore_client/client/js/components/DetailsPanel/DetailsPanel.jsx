@@ -291,6 +291,11 @@ function DetailsPanel({
                             && <>{' '}/{' '}{moment(resource.date).format('MMMM Do YYYY')}</>}
                         </p>
                         }
+                        {resource?.custom_md
+                            ? <div className="gn-details-text">
+                                <span className="gn-details-text-body" dangerouslySetInnerHTML={{ __html: resource.custom_md }} />
+                            </div>
+                            : null}
                         {resource?.abstract
                             ? <div className="gn-details-text">
                                 <span className="gn-details-text-body" dangerouslySetInnerHTML={{ __html: resource.abstract }} />
